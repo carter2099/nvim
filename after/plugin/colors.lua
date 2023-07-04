@@ -1,4 +1,8 @@
-function ColorMyPencils(color)
+require('rose-pine').setup({
+    disable_background = true
+})
+
+function FixBg(color)
 	color = color or "rose-pine"
 	vim.cmd.colorscheme(color)
 
@@ -6,5 +10,5 @@ function ColorMyPencils(color)
 	vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 end
 
-ColorMyPencils()
+FixBg()
 
