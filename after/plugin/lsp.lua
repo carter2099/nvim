@@ -16,6 +16,7 @@ lsp.ensure_installed({
     "lua_ls",
     "marksman",
     "pyre",
+    "rust_analyzer",
     "sqlls",
     "solidity",
 })
