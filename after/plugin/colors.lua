@@ -1,5 +1,13 @@
 require("rose-pine").setup({
     disable_background = true,
+    groups = {
+        comment = "subtle",
+        punctuation = "text",
+    },
+    highlight_groups = {
+        Operator = { fg = "text" },
+    },
+    --comment
 })
 
 function FixBg(color)
