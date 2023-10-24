@@ -22,6 +22,7 @@ vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 -- This is going to get me cancelled
 vim.keymap.set("i", "<C-c>", "<Esc>")
 
+-- Type a word + c-s to create a tag
 vim.keymap.set("i", "<C-s>", "<esc>yiwi<lt><esc>ea></><esc>hpF>a", { noremap = true, buffer = true })
 
 vim.keymap.set("n", "Q", "<nop>")
