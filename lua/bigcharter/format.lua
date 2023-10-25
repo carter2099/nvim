@@ -1,4 +1,4 @@
--- This only works for blade templates
+-- This only works for blade templates with prettier installed
 -- Define the function to format the file on save
 _G.formatOnSave = function()
     local filename = vim.fn.expand("%")
