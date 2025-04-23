@@ -6,6 +6,7 @@ return {
 			-- A list of parser names, or "all"
 			ensure_installed = {
 				"lua",
+				"ruby",
 			},
 
 			-- Install parsers synchronously (only applied to 'ensure installed')
