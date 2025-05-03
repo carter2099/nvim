@@ -16,7 +16,7 @@ opt.expandtab = true
 opt.smartindent = true
 
 -- no line wrap
-opt.wrap = false
+opt.wrap = true
 
 -- make searches better
 opt.hlsearch = false
@@ -26,7 +26,7 @@ opt.incsearch = true
 opt.termguicolors = true
 
 -- keep 8 lines at bottom of file when scrolling
-opt.scrolloff = 8
+opt.scrolloff = 10
 
 -- makes that line at the right
 opt.colorcolumn = "84"
