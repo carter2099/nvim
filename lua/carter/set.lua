@@ -26,7 +26,7 @@ opt.incsearch = true
 opt.termguicolors = true
 
 -- keep 8 lines at bottom of file when scrolling
-opt.scrolloff = 10
+opt.scrolloff = 14
 
 -- makes that line at the right
 opt.colorcolumn = "84"
