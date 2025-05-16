@@ -6,7 +6,6 @@ opt.relativenumber = true
 
 -- tabs = 4 space
 opt.tabstop = 4
--- note: I don't really know what this one does for tabs & spaces
 opt.softtabstop = 4
 -- the size of an indent
 opt.shiftwidth = 4
@@ -15,8 +14,7 @@ opt.expandtab = true
 -- automatically indent with some extra smartness
 opt.smartindent = true
 
--- no line wrap
-opt.wrap = true
+opt.wrap = false
 
 -- make searches better
 opt.hlsearch = false
