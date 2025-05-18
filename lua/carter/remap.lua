@@ -31,12 +31,12 @@ map.set("n", "<leader>f", vim.lsp.buf.format)
 
 -- Map :so to <leader><leader>
 map.set("n", "<leader><leader>", function()
-	vim.cmd("so")
+    vim.cmd("so")
 end)
 
 -- Open lazy with <leader>L
 map.set("n", "<leader>l", function()
-	vim.cmd("Lazy")
+    vim.cmd("Lazy")
 end)
 
 -- telescope
