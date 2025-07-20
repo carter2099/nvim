@@ -20,9 +20,9 @@ In the future I'll add git integration, and support for Rust once I start learni
     - lsp.lua
       - Contains all lsp configurations
   - plugins/
-    - colorschemes/
-      - Contains all color scheme plugins
     - init.lua
       - Register subdirectories (i.e. plugins.colorschemes)
+    - colorschemes/
+      - Contains all color scheme plugins
     - plugins...
 
