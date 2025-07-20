@@ -1,8 +1,57 @@
 -- *****
--- specific languages
+--
+-- language specific
+--
 -- *****
 
----- lua
+--*
+----** ruby
+--*
+--
+
+-- ruby-lsp
+vim.lsp.config['ruby-lsp'] = {
+    cmd = { 'ruby-lsp' },
+    filetypes = { 'ruby', 'eruby' },
+    root_markers = { 'Gemfile', '.git' },
+    init_options = {
+        enabledFeatures = {
+            -- use rubocop
+            diagnostics = false,
+            formatting = false
+        }
+    }
+}
+-- disable... I like it better with just rubocop?
+--vim.lsp.enable('ruby-lsp')
+
+-- rubocop (linting and formatting)
+vim.opt.signcolumn = "yes"
+vim.lsp.config['rubocop'] = {
+    cmd = { 'rubocop', '--lsp' },
+    filetypes = { 'ruby', 'eruby' },
+    root_markers = { 'Gemfile', '.git' },
+}
+vim.lsp.enable('rubocop')
+
+--*
+----** go
+--*
+--
+
+-- gopls
+vim.lsp.config['gopls'] = {
+    cmd = { 'gopls' },
+    filetypes = { 'go', 'gomod' },
+    root_markers = { '.git', 'go.mod' },
+}
+vim.lsp.enable('gopls')
+
+--*
+----** lua
+--*
+--
+
 -- Lua Language Server
 vim.lsp.config['luals'] = {
     cmd = { 'lua-language-server' },
@@ -54,37 +103,17 @@ vim.lsp.config['luals'] = {
 }
 vim.lsp.enable('luals')
 
----- ruby
--- ruby-lsp (completions)
-vim.lsp.config['ruby-lsp'] = {
-    cmd = { 'ruby-lsp' },
-    filetypes = { 'ruby', 'eruby' },
-    root_markers = { 'Gemfile', '.git' },
-    init_options = {
-        enabledFeatures = {
-            -- use rubocop
-            diagnostics = false,
-            formatting = false
-        }
-    }
-}
-vim.lsp.enable('ruby-lsp')
-
--- rubocop (linting and formatting)
-vim.opt.signcolumn = "yes"
-vim.lsp.config['rubocop'] = {
-    cmd = { 'rubocop', '--lsp' },
-    filetypes = { 'ruby', 'eruby' },
-    root_markers = { 'Gemfile', '.git' },
-}
-vim.lsp.enable('rubocop')
-
 
 -- *****
+--
 -- general config
+--
 -- *****
 
-vim.lsp.set_log_level("INFO")
+--*
+----** LspAttach
+--*
+--
 -- adapted from https://github.com/nvim-lua/kickstart.nvim/blob/master/init.lua
 -- general configs for LspAttach
 vim.api.nvim_create_autocmd('LspAttach', {
@@ -145,7 +174,10 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end,
 })
 
--- Diagnostic Config
+--*
+----** diagnostic config
+--*
+--
 vim.diagnostic.config {
     severity_sort = true,
     underline = { severity = vim.diagnostic.severity.ERROR },
