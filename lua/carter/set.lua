@@ -19,6 +19,7 @@ opt.wrap = false
 -- make searches better
 opt.hlsearch = false
 opt.incsearch = true
+opt.ignorecase = true
 
 -- better colors
 opt.termguicolors = true
