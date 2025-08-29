@@ -22,8 +22,7 @@ vim.lsp.config['ruby-lsp'] = {
         }
     }
 }
--- better with just rubocop - disable completion
---vim.lsp.enable('ruby-lsp')
+vim.lsp.enable('ruby-lsp')
 
 -- rubocop (linting and formatting)
 vim.lsp.config['rubocop'] = {
@@ -43,10 +42,9 @@ vim.lsp.config['gopls'] = {
     cmd = { 'gopls' },
     filetypes = { 'go', 'gomod' },
     root_markers = { '.git', 'go.mod' },
-    -- disable completion
-    on_init = function(client, _)
-        client.server_capabilities.completionProvider = nil
-    end,
+    --on_init = function(client, _)
+    --    client.server_capabilities.completionProvider = nil
+    --end,
 }
 vim.lsp.enable('gopls')
 
