@@ -27,7 +27,7 @@ vim.lsp.enable('ruby-lsp')
 -- rubocop (linting and formatting)
 vim.lsp.config['rubocop'] = {
     cmd = { 'rubocop', '--lsp' },
-    filetypes = { 'ruby', 'eruby' },
+    filetypes = { 'ruby' },
     root_markers = { 'Gemfile', '.git' },
 }
 vim.lsp.enable('rubocop')
