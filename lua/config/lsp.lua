@@ -22,8 +22,7 @@ vim.lsp.config['ruby-lsp'] = {
         }
     }
 }
--- better with just rubocop - disable completion
---vim.lsp.enable('ruby-lsp')
+vim.lsp.enable('ruby-lsp')
 
 -- rubocop (linting and formatting)
 vim.lsp.config['rubocop'] = {
