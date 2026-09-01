@@ -20,6 +20,19 @@ command -v timeout >/dev/null || { printf '%s\n' 'timeout is required' >&2; exit
   exit 1
 }
 
+git -C "$SOURCE_DIR" diff --quiet
+git -C "$SOURCE_DIR" diff --cached --quiet
+[[ -z "$(git -C "$SOURCE_DIR" status --porcelain --untracked-files=normal)" ]] || {
+  printf '%s\n' 'refusing to deploy a dirty Neovim checkout' >&2
+  exit 1
+}
+head_oid="$(git -C "$SOURCE_DIR" rev-parse HEAD)"
+upstream_oid="$(git -C "$SOURCE_DIR" rev-parse '@{upstream}')"
+[[ "$head_oid" == "$upstream_oid" ]] || {
+  printf '%s\n' 'refusing to deploy Neovim before HEAD is pushed' >&2
+  exit 1
+}
+
 mkdir -p -- "$(dirname -- "$TARGET_DIR")"
 staging_dir="$(mktemp -d "${TARGET_DIR}.release.XXXXXX")"
 rollback_dir="$(mktemp -d "${TARGET_DIR}.rollback.XXXXXX")"
